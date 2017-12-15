@@ -18,3 +18,5 @@ Fedora 27中最新的Firefox Quantum原生支持客户端装饰。要使用这�
 这是Firefox Quantum和其他[GNOME](https://www.gnome.org/)应用的对比图。如果你的GNOME使用非原装主题，客户端装饰也会从中选取一些自定义设定。客户端装饰产生的差异可能会更大一些。
 
 ![带客户端装饰的Firefox看起来更像GNOME原生应用](/assets/2017/12/08/Screenshot-from-2017-11-17-14-17-39.png)
+
+> 本文翻译自 Muayyad Alsadi 的文章 [Make Firefox Quantum look native in Fedora 27](https://fedoramagazine.org/firefox-quantum-look-native-f27/)，图片同样来自该文章。
