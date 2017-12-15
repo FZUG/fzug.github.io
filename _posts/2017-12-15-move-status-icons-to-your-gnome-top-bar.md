@@ -28,3 +28,5 @@ TopIcons Plus 扩展可以将状态栏图标放在 [GNOME Shell 顶部栏](https
 ![GNOME 顶部栏中显示的图标](/assets/2017/12/15/topicons.jpg)
 
 不过，这些图标的点击使用方式可能依然与标准 GNOME 状态图标有所不同，使用的过程中还请了解。这是由软件供应商控制的，而不是 GNOME 。
+
+> 本文翻译自 Paul W. Frields 的文章 [Move status icons to your GNOME top bar](https://fedoramagazine.org/move-status-icons-to-your-gnome-top-bar/)，图片同样来自该文章。
