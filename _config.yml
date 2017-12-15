@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Fedora 中文社区
+title: Fedora 中文用户组
 email:
 description: > # this means to ignore newlines until "baseurl:"
-  Fedora 中文用户组，即 FZUG（Fedora Chinese User Group），是 Fedora 中文用户的官方社区。 
+  Fedora 中文用户组（Fedora Chinese User Group，简写FZUG），是面向中文用户的 Fedora 用户组。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: FZUG
