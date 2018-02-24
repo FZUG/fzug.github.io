@@ -1,0 +1,48 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            {% if site.author %}
+              {{ site.author | escape }}
+            {% else %}
+              {{ site.title | escape }}
+            {% endif %}
+            </li>
+            {% if site.email %}
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+    <div class="footer-col-wrapper">
+	    感谢以下赞助商对 Fedora 中文用户组的赞助:<br /> <a href="https://packagecloud.io/"><img height="46" width="158" alt="Private NPM registry and Maven, RPM, DEB, PyPi and RubyGem Repository · packagecloud" src="https://packagecloud.io/images/packagecloud-badge.png" /></a> &nbsp;&nbsp; <a class="navbar-brand" href="https://www.tuna.moe/"><img src="https://www.tuna.moe/assets/img/logo-small.png" srcset="https://www.tuna.moe/assets/img/logo-small.png 1x, https://www.tuna.moe/assets/img/logo-small@2x.png 2x, https://www.tuna.moe/assets/img/logo-small@3x.png 3x, https://www.tuna.moe/assets/img/logo-small@4x.png 4x" alt="清华大学 TUNA 协会"></a>  &nbsp;&nbsp;  FDZH网站
+    </div>
+  </div>
+
+</footer>
