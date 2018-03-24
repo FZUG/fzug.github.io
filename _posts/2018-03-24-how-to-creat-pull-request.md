@@ -21,7 +21,7 @@ categories: tutorial
 
 2. 访问 <https://github.com/FZUG/fzug.github.io> 并且 `Fork` 仓库
 
-  ![Fork](assets/2018/03/24/fork.png)
+  ![Fork](/assets/2018/03/24/fork.png)
 
   如上图，点击右上角的 `Fork` 按钮。
 
@@ -29,11 +29,11 @@ categories: tutorial
 
   成功 `Fork` 之后，你就可以看到左上角显示的是「你的名字 / fzug.github.io 」（显然，我的小号名叫 fzug-no-one ）。点击图中那个绿色的「 Clone or download 」按钮，然后点击箭头所指的复制按钮，即可复制链接到剪贴板。
 
-  ![Copy link](assets/2018/03/24/copy-link.png)
+  ![Copy link](/assets/2018/03/24/copy-link.png)
 
   打开你的电脑上的终端（ Terminal ）， `cd` 到你计划存放这个仓库的目录下，输入 `git clone` ，空格，然后粘贴刚才复制的链接，回车。
 
-  ![Clone](assets/2018/03/24/clone.png)
+  ![Clone](/assets/2018/03/24/clone.png)
 
   如此，便将这个仓库 `Clone` 到了你的电脑上，之后的投稿、编辑、协作，都可以先在这个本地仓库中修改，再提交到 GitHub 上的仓库中。
 
@@ -41,8 +41,8 @@ categories: tutorial
 
 完成前面的准备工作之后，你就可以专注于创作文章了。不管是个人经验、心得体会，还是将优秀的外文文章翻译成中文，只要你觉得对于 Fedora 中文用户有所禆益，都可以添加进来，当然前提是要遵循原作者的版权要求哦。
 
-- 如果你的文章有配图的话，请将图片添加到 `assets/年/月/日/`目录中：
-  例如， `assets/2018/03/24/fork.png` 。
+- 如果你的文章有配图的话，请将图片添加到 `/assets/年/月/日/`目录中：
+  例如， `/assets/2018/03/24/fork.png` 。
 - 在 `_posts` 目录下添加名为`年-月-日-标题.md` 的 MarkDown 文档：
   例如， `_posts/2018/03/24/how-to.md` 。
 - 用你喜欢的编辑器打开刚添加的 MarkDown 文档
@@ -76,7 +76,7 @@ git remote add upstream https://github.com/FZUG/fzug.github.io
 # 最后可以看一下设置的结果
 git config -l
 ```
-![Commit](assets/2018/03/24/commit.png)
+![Commit](/assets/2018/03/24/commit.png)
 
 设置完成后，如上图所示，我们把刚才写好的文章先提交到本地的仓库中。
 
@@ -114,15 +114,15 @@ git push origin master
 # 将仓库中的内容推送到 GitHub 上的远端仓库中
 ```
 
-![push](assets/2018/03/24/push.png)
+![push](/assets/2018/03/24/push.png)
 
 如图中所示，填入 GitHub 的用户名和密码即可推送成功。
 
 最后，「投稿」，在你的 GitHub 仓库页面上，参照下图，提交 `Pull Request` （俗称「提 PR 」），添加标签，并邀请维护者进行 `Review` 。
 
-![pr1](assets/2018/03/24/pr1.png)
+![pr1](/assets/2018/03/24/pr1.png)
 
-![pr2](assets/2018/03/24/pr2.png)
+![pr2](/assets/2018/03/24/pr2.png)
 
 等维护者完成合并之后，你的文章就会呈现在各位读者面前了～
 
