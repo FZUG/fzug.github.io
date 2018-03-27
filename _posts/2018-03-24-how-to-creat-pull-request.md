@@ -17,25 +17,25 @@ categories: tutorial
 
 1. 注册 GitHub 帐号
 
-  <https://github.com/join>
+    <https://github.com/join>
 
 2. 访问 <https://github.com/FZUG/fzug.github.io> 并且 `Fork` 仓库
 
-  ![Fork](/assets/2018/03/24/fork.png)
+    ![Fork](/assets/2018/03/24/fork.png)
 
-  如上图，点击右上角的 `Fork` 按钮。
+    如上图，点击右上角的 `Fork` 按钮。
 
 3. `Clone` 到你的电脑上
 
-  成功 `Fork` 之后，你就可以看到左上角显示的是「你的名字 / fzug.github.io 」（显然，我的小号名叫 fzug-no-one ）。点击图中那个绿色的「 Clone or download 」按钮，然后点击箭头所指的复制按钮，即可复制链接到剪贴板。
+    成功 `Fork` 之后，你就可以看到左上角显示的是「你的名字 / fzug.github.io 」（显然，我的小号名叫 fzug-no-one ）。点击图中那个绿色的「 Clone or download 」按钮，然后点击箭头所指的复制按钮，即可复制链接到剪贴板。
 
-  ![Copy link](/assets/2018/03/24/copy-link.png)
+    ![Copy link](/assets/2018/03/24/copy-link.png)
 
-  打开你的电脑上的终端（ Terminal ）， `cd` 到你计划存放这个仓库的目录下，输入 `git clone` ，空格，然后粘贴刚才复制的链接，回车。
+    打开你的电脑上的终端（ Terminal ）， `cd` 到你计划存放这个仓库的目录下，输入 `git clone` ，空格，然后粘贴刚才复制的链接，回车。
 
-  ![Clone](/assets/2018/03/24/clone.png)
+    ![Clone](/assets/2018/03/24/clone.png)
 
-  如此，便将这个仓库 `Clone` 到了你的电脑上，之后的投稿、编辑、协作，都可以先在这个本地仓库中修改，再提交到 GitHub 上的仓库中。
+    如此，便将这个仓库 `Clone` 到了你的电脑上，之后的投稿、编辑、协作，都可以先在这个本地仓库中修改，再提交到 GitHub 上的仓库中。
 
 ## 为社区撰写你的第一篇文章
 
