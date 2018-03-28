@@ -134,3 +134,48 @@ git push origin master
 
 这就当作是一道新手练习题吧，欢迎各位新朋友把你的答案添加在下面。写好了，别忘向 FZUG 提 PR 哦～
 
+0. 生成ssh密钥对
+windows用户可以使用终端登录的工具来生成，linux下直接使用命令
+```
+ssh-keygen -t rsa
+```
+
+1. 查看公钥内容并上传到git
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+>
+[licheng@localhost ~]$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCblmg8Qn7bBcUFWrukZfFHuHAigSCVChPVqu1WUomcaVRNnhGhboSGCZAMaedL9ppxN4MD2VMcTQY0ateAxT21DB2IbBO6awTdnb/m+Oh3fz8B7VpTKLICUlQIkpLOkvGNtpxRHA8DEURjwsNhk13z7aWykUqhYZ78VlWIldOZ3io9PAZo65GSHtesTTBIrXdBnahPaEbAoXeyYw0bWTGDJ11vVsAnZXhQXLg+e68Eavw2iG4TCubuHW0LKwTGwN0UhJCoRMiy22Cv0fxa6x086mSFn7LXYpqv5dqcdnWO1VRZ74RdtYu9W2oOF/ZPq+REQK28uN8zKMs0pY8Q2B29 licheng@localhost.localdomain
+>
+
+![sshgit1](/assets/2018/03/28/sshgit1.png)
+
+![sshgit2](/assets/2018/03/28/sshgit2.png)
+
+![sshgit3](/assets/2018/03/28/sshgit3.png)
+
+![sshkeyadd](/assets/2018/03/28/sshkeyadd.png)
+
+2. 使用sshclone并尝试push操作
+
+首先使用ssh形式克隆一个项目，注意不是https哦
+
+![sshclone](/assets/2018/03/28/sshclone.png)
+
+```
+[licheng@localhost l]$ git clone git@github.com:shiptux/lispbox.git
+正克隆到 'lispbox'...
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+接收对象中: 100% (5/5), 12.78 KiB | 4.26 MiB/s, 完成.
+```
+```
+[licheng@localhost lispbox]$ git push
+Everything up-to-date
+
+```
+并不需要输入密码
