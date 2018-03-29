@@ -5,8 +5,7 @@ date:   2018-03-28 19:38:01 +0800
 categories: tutorial
 ---
 
- Common lisp 是lisp的众多方言之一，它是为了标准化之前 lisp 众多的分支而开发的，它本身并不是一个具体的实现而是各个
-lisp所遵循的规范。[^1]
+Common Lisp 是 Lisp 的一种方言，旨在标准化众多的 Lisp 分支线。
 
 在fedora[]下构建 common-lisp 环境，fedora强大的包管理器 dnf 是一个优先选择。
 
@@ -14,7 +13,7 @@ lisp所遵循的规范。[^1]
 ```
 dnf install emacs sbcl
 ```
-当安装成功后，设置 emacs 的 melpa 源添加以下内容到emacs配置文件 ~/.emacs 或者 emacs.d 文件夹
+当安装成功后，设置 Emacs 的 Melpa 源添加以下内容到 Emacs 配置文件 ~/.emacs 或者 emacs.d 文件夹
 ```
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -28,13 +27,13 @@ dnf install emacs sbcl
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 ```
-使用<code>M-x package-refresh-contents<code>更新之后 使用<code>M-x package-install slime<code> 安装slime
-在 emacs 配置文件中加入以下内容
+使用<code>M-x package-refresh-contents<code> 此处的M是指键盘上的Alt键。更新之后 使用<code>M-x package-install slime<code> 安装 Slime
+在 Emacs 配置文件中加入以下内容
 ```
 ;; Set your lisp system and, optionally, some contribs
 (setq inferior-lisp-program "使用which sbcl确定你的sbcl路径")
 (setq slime-contribs '(slime-fancy))
 ```
-打开emacs 
-<code>M-x slime<code> 享受你的 common lisp 之旅
-注1：摘自百度百科
+打开 Emacs 
+<code>M-x slime<code> 享受你的 Common Lisp 之旅
+
