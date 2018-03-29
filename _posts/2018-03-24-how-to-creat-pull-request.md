@@ -134,13 +134,13 @@ git push origin master
 
 这就当作是一道新手练习题吧，欢迎各位新朋友把你的答案添加在下面。写好了，别忘向 FZUG 提 PR 哦～
 
-0. 生成ssh密钥对
-windows用户可以使用终端登录的工具来生成，linux下直接使用命令
+0. 生成 ssh 密钥对
+ windows 用户可以使用终端登录的工具来生成， linux 下直接使用命令
 ```
 ssh-keygen -t rsa
 ```
 
-1. 查看公钥内容并上传到git
+1. 查看公钥内容并上传到 git
 
 ```
 cat ~/.ssh/id_rsa.pub
@@ -159,9 +159,9 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCblmg8Qn7bBcUFWrukZfFHuHAigSCVChPVqu1WUomc
 
 ![sshkeyadd](/assets/2018/03/28/sshkeyadd.png)
 
-2. 使用sshclone并尝试push操作
+2. 使用 sshclone 并尝试 push 操作
 
-首先使用ssh形式克隆一个项目，注意不是https哦
+首先使用 ssh 形式克隆一个项目，注意不是 https 
 
 ![sshclone](/assets/2018/03/28/sshclone.png)
 
