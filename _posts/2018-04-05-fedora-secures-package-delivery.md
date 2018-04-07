@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fedora 如何保障软件包分发安全性"
-date:   2018-03-26 14:01:00 +0800
+date:   2018-04-05 14:01:00 +0800
 ---
 
 今年早些时候， packagecloud 发布了一篇名为 [“attacks against GPG signed APT repositories” （针对启用了 GPG 签名的 APT 仓库的攻击）](https://blog.packagecloud.io/eng/2018/02/21/attacks-against-secure-apt-repositories/)的文章。当前，Fedora 使用了多种方式确保从 Fedora 仓库分发给你的软件包是安全的。本文将深入讲解 Fedora 项目如何提升更新发布的安全性。注意，本文的分析仅仅适用于 Fedora 项目在 Fedora 中的默认软件仓库。
