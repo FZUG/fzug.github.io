@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "如何在 fedora 下建立 commonlisp 环境"
+title:  "如何在 Fedora 下建立 Common Lisp 环境"
 date:   2018-03-28 19:38:01 +0800
 author: LiCheng
 categories: tutorial
@@ -8,9 +8,9 @@ categories: tutorial
 
 Common Lisp 是 Lisp 的一种方言，旨在标准化众多的 Lisp 分支线。
 
-在 Fedora 下构建 common-lisp 环境， Fedora 强大的包管理器 DNF 是一个优先选择。
+在 Fedora 下构建 Common Lisp 环境， Fedora 强大的包管理器 DNF 是一个优先选择。
 
-此处安装 emacs 为基础的 common-lisp 实现， Emacs (强大且对 lisp 友好的编辑器), SLIME (Superior Lisp Interaction Mode for Emacs) 以及 SBCL (Steel Bank Common lisp)。
+此处安装 emacs 为基础的 Common Lisp 实现， Emacs (强大且对 lisp 友好的编辑器), SLIME (Superior Lisp Interaction Mode for Emacs) 以及 SBCL (Steel Bank Common lisp)。
 ```
 dnf install emacs sbcl
 ```
