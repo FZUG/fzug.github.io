@@ -11,13 +11,23 @@ categories: vpn
 
 来吧！
 
-### 安装 Opera 10.60
+### 安装 Firefox 52 ESR
 
-这是 2010 年发布的版本，正好是 Sangfor 针对 Linux 教程的对应浏览器版本。就用这个吧。
+Firefox 限制了 NPAPI 的支持。从 2017 年 3 月发布的 Firefox 52 开始，插件支持仅限于 Adobe Flash，去掉了 NPAPI 的支持，这直接影响了 Java、Silverlight 和其他基于 NPAPI 的插件。
 
-[点击下载 Opera 10.60](!https://pan.baidu.com/s/1miNZCla)
+Mozilla 提供 Firefox 的 ESR(Extended Support Release) 版本给需要扩展支持的用户。目前最新的 32 位的 Firefox 52 ESR 还在继续支持 Java 运行插件。
 
-下载完之后解压，运行 install 一切按默认方式安装即可完成。
+访问 [Firefox ESR 下载](https://www.mozilla.org/en-US/firefox/organizations/all/) 页面下载 [32 位 Firefox 52 ESR](https://download.mozilla.org/?product=firefox-esr-latest-ssl&os=linux&lang=zh-CN)
+
+下载完之后解压，放到指定路径下，执行 `firefox` 程序即可运行
+
+```
+tar jxvf firefox-52.7.3esr.tar.bz2
+cd firefox
+./firefox
+```
+
+![Firefox](/assets/2018/04/16/firefox.png "Firefox")
 
 ### 安装 Java 1.6 虚拟机
 
@@ -37,134 +47,30 @@ cd /usr/lib/mozilla/plugins/
 sudo ln -s /usr/java/jre1.6.0_27/lib/i386/libnpjp2.so
 ```
 
-### 启动 Opera
+### 启动 Firefox
 
-Opera 安装路径在 `~/.local/bin/opera` 里，在终端启动 Opera 可以找出缺少的依赖包
+在终端启动 Firefox 可以找出缺少的依赖包。首先打开附加组件，查看插件选项中是否已经有了 Java Plugin，并激活它。
 
-```
-~/.local/bin/opera
-```
+![FirefoxPlugin](/assets/2018/04/16/firefox_plugin.png "FirefoxPlugin")
 
-启动了，接受一下条款。显然这个界面，已经不忍直视了。
-
-![Opera](/assets/2018/04/16/opera.png "Opera")
-
-首先执行以下操作
-
-- 点击 `菜单 -> 设置 -> 首选项 -> 高级`，启用 `允许使用插件`
-- 并在 `插件选项` 菜单中 `更改路径` ，将 `/usr/lib/mozilla/plugins` 添加进去。
-- 在地址栏输入 `about:plugins` 查看是否安装了 Java 虚拟机。
-
-如果没有则看终端输出内容
-
-#### 情况一
+如果碰到以下情况
 
 ```
-/home/chinesejar/.local/lib/opera//operapluginwrapper-ia32-linux: error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
+XPCOMGlueLoad error for file /home/chinesejar/Downloads/firefox/libxul.so:
+libdbus-glib-1.so.2: cannot open shared object file: No such file or directory
+Couldn't load XPCOM.
 ```
 
-以上输出提示缺少 `libstdc++.so.6` 这个依赖库
+以上输出提示缺少 `dbus-glib-0.110-2.fc28.i686` 这个依赖库
 
 解决方法
 
 ```
-sudo dnf install libstdc++-7.3.1-5.fc27.i686
-```
-
-#### 情况二
-
-```
-/home/chinesejar/.local/lib/opera//operapluginwrapper-ia32-linux: error while loading shared libraries: libXt.so.6: cannot open shared object file: No such file or directory
-```
-
-以上输出提示缺少 `libXt.so.6` 这个依赖库
-
-解决方法
-
-```
-sudo dnf install libXt-1.1.5-6.fc27.i686
-```
-
-#### 情况三
-
-```
-/home/chinesejar/.local/lib/opera//operapluginwrapper-ia32-linux: error while loading shared libraries: libXext.so.6: cannot open shared object file: No such file or directory
-```
-
-以上输出提示缺少 `libXext.so.6` 这个依赖库
-
-解决方法
-
-```
-sudo dnf install libXext-1.3.3-7.fc27.i686
-```
-
-**如果解决了以上三种情况， 至此，再打开 `about:plugins` 就能看到 Java 虚拟机了。**
-
-![OperaPlugin](/assets/2018/04/16/opera_plugin.png "OperaPlugin")
-
-#### 情况四
-
-如果你在登录 SSL VPN 的过程中出现了以下情况
-
-```
-Opera : Failed to load library libgtk-x11-2.0.so.0
-Opera : Failed to load library libgdk-x11-2.0.so.0
-Opera : Failed to load library libglib-2.0.so.0
-Opera : Failed to load library libgobject-2.0.so.0
-Opera Plugin Proxy: Could not start up plugin
-```
-
-解决方法
-
-```
-sudo dnf install gtk2-2.24.32-1.fc27.i686
-```
-
-#### 情况五
-
-如果你在登录 SSL VPN 的过程中出现了以下情况
-
-```
-(operapluginwrapper-ia32-linux:18506): Gtk-WARNING **: 无法在模块路径中找到主题引擎：“adwaita”，
-
-(operapluginwrapper-ia32-linux:18506): Gtk-WARNING **: 无法在模块路径中找到主题引擎：“murrine”，
-
-(operapluginwrapper-ia32-linux:18506): Gtk-WARNING **: 无法在模块路径中找到主题引擎：“adwaita”，
-Gtk-Message: Failed to load module "pk-gtk-module"
-Gtk-Message: Failed to load module "canberra-gtk-module"
-```
-
-解决方法
-
-```
-sudo dnf install PackageKit-gtk3-module-1.1.8-1.fc27.i686
-```
-
-#### 情况六
-
-如果你在登录 SSL VPN 的过程中出现了以下情况
-
-```
-(operapluginwrapper-ia32-linux:20892): Gtk-WARNING **: 无法在模块路径中找到主题引擎：“adwaita”，
-
-(operapluginwrapper-ia32-linux:20892): Gtk-WARNING **: 无法在模块路径中找到主题引擎：“murrine”，
-
-(operapluginwrapper-ia32-linux:20892): Gtk-WARNING **: 无法在模块路径中找到主题引擎：“adwaita”，
-Gtk-Message: Failed to load module "canberra-gtk-module"
-
-```
-
-解决方法
-
-```
-sudo dnf install libcanberra-gtk2-0.30-15.fc27.i686
+sudo dnf install dbus-glib-0.110-2.fc28.i686
 ```
 
 ### 大功告成
 
-依赖的 i686 包太多了，但总算装完了，登录了一下，总算是成功了。
+总算装完了，登录了一下，成功了。
 
-![OperaTrust](/assets/2018/04/16/opera_trust.png "OperaTrust")
-
-![OperaLogin](/assets/2018/04/16/opera_login.png "OperaLogin")
+![FirefoxTrust](/assets/2018/04/16/firefox_trust.png "FirefoxTrust")
