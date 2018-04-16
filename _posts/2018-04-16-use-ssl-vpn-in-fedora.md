@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "在 Fedora 中使用 SSL VPN"
+title:  "在 Fedora 中使用 Sangfor 公司提供的 SSL VPN 解决方案"
 date:   2018-04-16 19:09:19 +0800
 categories: vpn
 ---
@@ -13,9 +13,25 @@ categories: vpn
 
 ### 安装 Firefox 52 ESR
 
+参考 [Java 针对不支持 Firefox 帮助说明的内容](https://java.com/en/download/help/firefox_java.xml)
+```
+64-bit Firefox
+The 64-bit version of Firefox does not support NPAPI plug-ins, including Java.
+
+Firefox 52 and above
+Beginning with Firefox 52 (released March 2017), plug-in support is limited to Adobe Flash, and drops support for NPAPI, impacting plugins for Java, Silverlight, and other similar NPAPI based plugins.
+
+If you have problems accessing Java applications using Firefox, Oracle recommends using Internet Explorer (Windows) or Safari (Mac OS X) instead. Developers and System administrators looking for alternative ways to support Firefox users should see this blog regarding Launching Web Start applications.
+
+Firefox 52 ESR 32-bit release
+Mozilla offers an Extended Support Release (ESR) version of Firefox specifically for use by organizations who need extended support for mass deployments. Only Mozilla Firefox 52 ESR 32-bit release will continue offering support for the standards-based plugin support technology required to launch Java Applets. To see if you are using an ESR release, check the Firefox menu item (Help -> About) and looking for the "ESR" identifier.
+
+Mozilla maintains Firefox ESR Releases for approximately one year. Developers and users still relying on the Java plugin technology in the 32-bit Mozilla Firefox web browser should consider migrating to a different solution.
+```
+
 Firefox 限制了 NPAPI 的支持。从 2017 年 3 月发布的 Firefox 52 开始，插件支持仅限于 Adobe Flash，去掉了 NPAPI 的支持，这直接影响了 Java、Silverlight 和其他基于 NPAPI 的插件。
 
-Mozilla 提供 Firefox 的 ESR(Extended Support Release) 版本给需要扩展支持的用户。目前最新的 32 位的 Firefox 52 ESR 还在继续支持 Java 运行插件。
+Mozilla 提供 Firefox 的 ESR (Extended Support Release) 版本给需要扩展支持的用户。目前只有最新的 32 位的 Firefox 52 ESR 还在继续支持 Java 运行插件。
 
 访问 [Firefox ESR 下载](https://www.mozilla.org/en-US/firefox/organizations/all/) 页面下载 [32 位 Firefox 52 ESR](https://download.mozilla.org/?product=firefox-esr-latest-ssl&os=linux&lang=zh-CN)
 
@@ -74,3 +90,7 @@ sudo dnf install dbus-glib-0.110-2.fc28.i686
 总算装完了，登录了一下，成功了。
 
 ![FirefoxTrust](/assets/2018/04/16/firefox_trust.png "FirefoxTrust")
+
+**免责声明**
+
+我们只是提供一个解决方案，无法为他们的 SSL VPN 服务负责，更不是推广宣传其服务。
