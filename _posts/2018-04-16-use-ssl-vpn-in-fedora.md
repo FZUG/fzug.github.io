@@ -63,12 +63,12 @@ libdbus-glib-1.so.2: cannot open shared object file: No such file or directory
 Couldn't load XPCOM.
 ```
 
-以上输出提示缺少 `dbus-glib-0.110-2.fc28.i686` 这个依赖库
+以上输出提示缺少 `libdbus-glib-1.so.2` 这个依赖库
 
 解决方法
 
 ```
-sudo dnf install dbus-glib-0.110-2.fc28.i686
+sudo dnf install /usr/lib/libdbus-glib-1.so.2
 ```
 
 ### 大功告成
