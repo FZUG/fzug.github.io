@@ -13,11 +13,9 @@ categories: vpn
 
 ### 安装 Firefox 52 ESR
 
-Firefox 限制了 NPAPI 的支持。从 2017 年 3 月发布的 Firefox 52 开始，插件支持仅限于 Adobe Flash，去掉了 NPAPI 的支持，这直接影响了 Java、Silverlight 和其他基于 NPAPI 的插件。
+Firefox 限制了 NPAPI 的支持。从 2017 年 3 月发布的 Firefox 52 开始，插件支持仅限于 Adobe Flash，去掉了 NPAPI 的支持，这直接影响了 Java、Silverlight 和其他基于 NPAPI 的插件。详情参考 [Java 针对不支持 Firefox 帮助说明的内容](https://java.com/en/download/help/firefox_java.xml)。
 
 Mozilla 提供 Firefox 的 ESR (Extended Support Release) 版本给需要扩展支持的用户。目前只有最新的 32 位的 Firefox 52 ESR 还在继续支持 Java 运行插件。
-
-详情参考 [Java 针对不支持 Firefox 帮助说明的内容](https://java.com/en/download/help/firefox_java.xml)
 
 访问 [Firefox ESR 下载](https://www.mozilla.org/en-US/firefox/organizations/all/) 页面下载 [32 位 Firefox 52 ESR](https://download.mozilla.org/?product=firefox-esr-latest-ssl&os=linux&lang=zh-CN)
 
