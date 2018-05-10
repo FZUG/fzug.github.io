@@ -6,9 +6,13 @@ date: 2018-04-03 17:12 +0800
 
 > 本文翻译自 Stephen Gallagher 的文章 [Modularity is Dead, Long Live Modularity!](https://communityblog.fedoraproject.org/modularity-dead-long-live-modularity/)。
 >
-> 原文发布于 2017 年 12 月 19 日，其中涉及的相应技术已有进展，文中会有译者添加的更新标示。
+> 原文发布于 2017 年 12 月 19 日，其中涉及的相应技术已有进展，文中亦有译者添加的更新标示。
 >
-> —— 译者注
+> 在 2018 年 5 月发布的 Fedora 28 Server 版中，模块化仓库已正式推出，相关介绍请移步本站文章「[Fedora 28 Server 版中的模块化 (Modularity) 新特性]({% post_url 2018-05-10-Modularity-in-Fedora-28-Server-Edition %})」。
+>
+> 本文仅作为 Fedora 模块化的探索历史供读者参考。
+>
+> —— 2018 年 5 月 10 日，译者注
 
 ## 概览
 
