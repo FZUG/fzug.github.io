@@ -1,0 +1,21 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// cf. https://fedoraproject.org/wiki/Logo/UsageGuidelines#Colors
+$fedorablue: #3c6eb4;
+$fedoradarkblue: #294172;
+$fedoralightgrey: #dedede;
+
+.site-header {
+  background: linear-gradient(to bottom, $fedorablue 0%, $fedoradarkblue 100%);
+  border: 0px;
+}
+
+.site-title, .site-title:visited { color: white; }
+@media screen and (min-width: 600px) {
+  .site-nav .page-link { color: white; }
+}
+
+.site-footer { background: $fedoralightgrey; }
