@@ -3,10 +3,9 @@ layout: post
 title: "保护数据，用 LUKS 给磁盘全盘加密"
 categories: tutorial
 date: 2018-12-05 00:05:27
+author: Nova Kwok
 ---
 
-
-继第二块硬盘被 Oxxxo 硬盘盒给毁掉了之后，最近入手了块新的移动硬盘用于备份数据，到手之后第一件事情是对硬盘进行加密，之前经常使用的 VeraCrypt，由于这块硬盘不需要在其他平台上使用，所以这次打算换点玩法，充分利用上系统自带的 LUKS，来完成对设备的加密.
 
 > LUKS is the standard for Linux hard disk encryption. By providing a standard on-disk-format, it does not only facilitate compatibility among distributions, but also provides secure management of multiple user passwords. In contrast to existing solution, LUKS stores all setup necessary setup information in the partition header, enabling the user to transport or migrate his data seamlessly.
 
@@ -184,7 +183,7 @@ Filesystem       Size  Used Avail Use% Mounted on
 
 ## 一点题外话
 
-如果你的设备和你在同一个区域/国家的话，加密你的设备**只能防止因为设备失窃带来的信息泄漏或者让你知道你的设备正在被第三方尝试获取（比如在你睡着的时候偷走设备进行取证）**，真正隐私的信息还是尽量做到隐藏或者放在一个对你没有司法管理权的区域，毕竟再好的加密，也没法抵抗一根 5 美元不到的棍子，人的因素，永远是信息安全中最弱的一环.
+如果你的设备和你在同一个区域/国家的话，加密你的设备**只能防止因为设备失窃带来的信息泄漏或者让你知道你的设备正在被第三方尝试获取（比如在你睡着的时候偷走设备进行取证）**。
 
 此外，加密不等于备份，对于一个非备份用途的全盘加密磁盘来说，增量备份会变得更加困难，所以，建议此类使用场景的用户加入备份的元素，此外，给加密卷的 Header 和 Key-Slots 加密一下吧，方法见第二个参考链接.
 
