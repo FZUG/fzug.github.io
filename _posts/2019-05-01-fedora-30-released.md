@@ -6,6 +6,8 @@ date: 2019-05-01 14:36:25 +0800
 
 > 本文转载自 [Fedora 30 正式发布](https://openingsource.org/6567/)，翻译者[Blah Boom](https://openingsource.org/author/blah/)，英文原文链接: [Announcing the release of Fedora 30](https://fedoramagazine.org/announcing-fedora-30/)。
 
+![Fedora 30 released](https://fedoramagazine.org/wp-content/uploads/2019/04/fedora30-816x345.jpg)
+
 Fedora 是一个由 Red Hat 赞助、Fedora 项目社区支持的独立 Linux 发行版。其提供了开箱即用的用户体验，默认搭载 GNOME 桌面环境。
 
 ---
