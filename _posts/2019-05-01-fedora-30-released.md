@@ -39,7 +39,7 @@ Fedora Server 引入了 [Linux System Roles](https://linux-system-roles.github.i
 ---
 
 Fedora 主页：
-<a href="https://fedoraproject.org/">https://fedoraproject.org/</a>。
+<a href="https://fedoraproject.org/">https://fedoraproject.org/</a>
 
 ---
 
