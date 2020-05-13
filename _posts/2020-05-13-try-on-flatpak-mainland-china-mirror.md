@@ -7,7 +7,7 @@ date: 2020-05-13 09:43:00 +0000
 
 > 本文翻译自 Bartłomiej Piotrowski 的文章 [Test driving Flathub mirror for users in China](https://barthalion.blog/test-driving-flathub-mirror-for-users-in-china/)。
 
-Flathub 无论在哪里使用都比较快的其中一个原因，是它的 CDN 服务由 [Fastly](https://www.fastly.com) 提供。然而在 Fastly 和 Flathub 均被封锁的中国大陆，这对用户并不是一件好事。虽然在中国大陆也有类似 Fastly 的服务，但作为一个开源项目，我们的预算几乎是零。
+Flathub 之所以能做到从各地访问速度都很快，是因为使用了 [Fastly](https://www.fastly.com) 提供的 CDN 服务。然而在中国大陆，由于 Fastly 和 Flathub 都被封锁，用户体验就要差很多了。虽然在中国大陆也有类似 Fastly 的服务，但作为一个开源项目，我们的预算几乎是零。
 
 Arch Linux 开发者 [Felix Yan](https://felixc.at/) 向我们提议了一些「对中国大陆友好」的 VPS 提供商。最终，我使用 Oracle Cloud 的免费套餐配置了两台新服务器。
 
@@ -32,6 +32,6 @@ xa.icon=https://dl.flathub.org/repo/logo.svg
 xa.homepage=https://flathub.org/
 ```
 
-现在之后的所有 Flatpak 操作均会使用位于首尔的镜像之一。我也已经提交了[一个 Pull Request](https://github.com/flatpak/flatpak/pull/3603) 使整个过程不需要那么多手动操作。
+之后，所有 Flatpak 的操作均会使用位于首尔的镜像之一。我也已经提交了 [一个 Pull Request](https://github.com/flatpak/flatpak/pull/3603)，可以简化手动操作。
 
-如果你位于中国大陆，请尝试一下这个镜像，并在相关的 [GitHub issue](https://github.com/flathub/flathub/issues/813) 提出反馈。我们会一直运行它，如果它工作良好的话，我们会把它加入安装指引。
+如果你位于中国大陆，请尝试一下这个镜像，并在相关的 [GitHub issue](https://github.com/flathub/flathub/issues/813) 提出反馈。这个服务会持续运行，如果体验好的话，我们会在安装指引中加上相关说明。
