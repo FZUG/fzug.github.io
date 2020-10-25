@@ -9,7 +9,7 @@ permalink: /about/
 
 你也可以通过以下几种方式参与到 Fedora 中文用户组中来：
 
-- 邮件列表：chinese#lists.fedoraproject.org 
+- 邮件列表：chinese#lists.fedoraproject.org
 
     你可以[点击这里进行订阅](https://lists.fedoraproject.org/admin/lists/chinese@lists.fedoraproject.org/)，或[从这里查看历史邮件归档](https://lists.fedoraproject.org/archives/list/chinese@lists.fedoraproject.org/)。
 
