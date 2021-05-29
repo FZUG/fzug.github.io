@@ -13,7 +13,7 @@ permalink: /about/
 
     你可以[点击这里进行订阅](https://lists.fedoraproject.org/admin/lists/chinese@lists.fedoraproject.org/)，或[从这里查看历史邮件归档](https://lists.fedoraproject.org/archives/list/chinese@lists.fedoraproject.org/)。
 
-- IRC：freenode.net 上的 [#fedora-zh 频道](https://webchat.freenode.net/?channels=#fedora-zh)
+- IRC：Libera.Chat 上的 [#fedora-zh 频道](https://web.libera.chat/?channels=#fedora-zh)
 
     你也可以[使用 HexChat 客户端连接 IRC](https://fedoraproject.org/wiki/How_to_use_IRC/zh-cn)。
 
