@@ -1,3 +1,7 @@
+---
+title: false  # don't show this page on website
+---
+
 # Security Policy
 
 ## Supported Versions
