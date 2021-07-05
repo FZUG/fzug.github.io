@@ -15,10 +15,25 @@
 # in the templates via {{ site.myvariable }}.
 title: Fedora 中文用户组
 email: chinese@lists.fedoraproject.org
+tagline: Fedora Zhongwen (Chinese) User Group, FZUG, Fedora 中文社区
 description: > # this means to ignore newlines until "baseurl:"
-  Fedora 中文用户组（Fedora Zhongwen (Chinese) User Group，简写FZUG），是面向中文用户的 Fedora 用户组。
+  Fedora 中文用户组（Fedora Zhongwen (Chinese) User Group，简称 FZUG），是 Fedora
+  中文用户组成的社区。FZUG 由众多已创办 Fedora 中文社区多年的 Fedora 爱好者共同创建于 2008 年。
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://zh.fedoracommunity.org/" # the base hostname & protocol for your site, e.g. http://example.com
+twitter:
+  username: FZUG
+  card: summary
+logo: /assets/FZUG-logo.png
+social:
+  name: FZUG
+  links:
+    - https://www.twitter.com/FZUG
+    - https://github.com/FZUG
+    - https://www.facebook.com/groups/fedora.chinesegroup
+    - https://t.me/fedorazh
+locale: zh_CN
+# twitter_username and github_username are used in social.html in minima theme in footer.
 twitter_username: FZUG
 github_username: FZUG
 
