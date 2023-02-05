@@ -23,7 +23,7 @@ date: 2023-02-03 22:30:20 +0800
 
 ## 详细信息
 
-本次黑客节的目的是汇集来自显示/GPU 堆栈的贡献者。与会者将包括来自 [Freedesktop](https://freedesktop.org)、[GNOME](https://www.gnome.org/)、[KDE](https://kde.org/)、[Mesa](https://mesa3d.org)、[Wayland](https://wayland.freedesktop.org/) 和 [Linux 内核](https://www.kernel.org)等项目的成员。这将会是一个很好的，针对使相关技术在不同的供应商和项目中良好运作所需的整体方案进行会面、商讨与合作的机会。
+本次黑客节的目的是汇集来自显示、GPU 技术栈的贡献者。与会者将包括来自 [Freedesktop](https://freedesktop.org)、[GNOME](https://www.gnome.org/)、[KDE](https://kde.org/)、[Mesa](https://mesa3d.org)、[Wayland](https://wayland.freedesktop.org/) 和 [Linux 内核](https://www.kernel.org)等项目的成员。这将会是一个很好的，针对使相关技术在不同的供应商和项目中良好运作所需的整体方案进行会面、商讨与合作的机会。
 
 黑客节的建议长度为两整天，第三天上午结束，下午在当地进行一些活动。
 
@@ -59,7 +59,7 @@ date: 2023-02-03 22:30:20 +0800
 
 另一方面，我们希望为 Linux 用户赋能。支持 HDR 的硬件正变得越来越普遍，并且最近变得越来越便宜。HDR 得到越来越多的支持，越来越多的内容正在使用它。与 Windows 和 Mac 用户相比，只要我们没有 HDR 支持，Linux 用户的体验就会下降。
 
-最后，支持 HDR 符合 [Fedora 的基础](https://docs.fedoraproject.org/en-US/project/)，我们希望做正确的事情，确保每个人都可以自由享受最新的创新和功能。在我们迁移到 Wayland 之后，Wayland 作为一个现代图形堆栈，允许我们构建这样的新功能。
+最后，支持 HDR 符合 [Fedora 项目的原则](https://docs.fedoraproject.org/en-US/project/)，我们希望做正确的事情，确保每个人都可以自由享受最新的创新和功能。在我们迁移到 Wayland 之后，Wayland 作为一个现代图形堆栈，允许我们构建这样的新功能。
 
 ## 结语
 
