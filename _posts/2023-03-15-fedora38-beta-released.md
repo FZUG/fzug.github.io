@@ -9,7 +9,7 @@ date: 2023-03-15 09:30:20 +0800
 - 源文：[Announcing Fedora Linux 38 Beta](https://fedoramagazine.org/announcing-fedora-38-beta/)
 - 作者：[Matthew Miller](https://fedoramagazine.org/author/mattdm/)
 - 许可证：[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
-- 译者：暮光的白杨
+- 译者：[暮光的白杨](https://gitlab.com/Poplar.at.twilight)
 - 日期：2023-03-15
 
 ----
