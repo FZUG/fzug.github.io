@@ -25,7 +25,7 @@ Fedora 项目很高兴地宣布 Fedora Linux 38 Beta 现已发布，这是我们
 - [获取 Fedora 38 IoT Beta](https://getfedora.org/iot/download/)
 - [获取 Fedora 38 Cloud Beta](https://alt.fedoraproject.org/en/cloud/)
 - [获取 Fedora 38 CoreOS Beta](https://getfedora.org/en/coreos/download)
-- [中国大陆镜像站列表](./../guide/misc/mirror-site.md)
+- [中国大陆镜像站列表](https://whiteboard-ui8.pages.dev/guide/misc/mirror-site/)
 
 或者，查看我们流行的变体分支，其中包括 KDE Plasma、Xfce 和其他桌面环境，以及用于 ARM 设备（如 Raspberry Pi）的镜像：
 
