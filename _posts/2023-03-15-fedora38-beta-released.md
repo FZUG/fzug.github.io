@@ -43,7 +43,7 @@ Fedora 38 Workstation Beta 搭载了 GNOME 44。它目前处于测试阶段，�
 
 我们始终努力为用户快速带来新的安全功能。软件包现在使用更严格的编译器标志构建，以防止缓冲区溢出。rpm 包管理器使用基于 Sequoia 的 OpenPGP 解析器而不是它自己的实现。
 
-如果你正在分析应用程序，你会喜欢现在内置在官方包中的帧指针（Frame Pointer）。这使得 Fedora Linux 成为寻求提高 Linux 应用程序性能的开发人员的绝佳平台。
+如果你正在分析应用程序，你会喜欢现在内置在官方包中的帧指针（Frame Pointer[^1]）。这使得 Fedora Linux 成为寻求提高 Linux 应用程序性能的开发人员的绝佳平台。
 
 当然，还有编程语言和库的常规更新：Ruby 3.2、gcc 13、LLVM 16、Golang 1.20、PHP 8.2 等等！
 
@@ -60,3 +60,5 @@ Beta 版本是代码完整的，与最终版本非常相似。如果你花时间
 ## 更多信息
 
 有关 Fedora Linux 38 Beta 版新功能的更多详细信息，你可以查阅 [Fedora Linux 38 ChangeSet](https://fedoraproject.org/wiki/Releases/38/ChangeSet)。它包含有关此版本随附的新软件包和改进的更多技术信息。
+
+[^1]: 另见：[Fedora 38 的帧指针](https://imbearchild.cyou/archives/2023/02/fedora-38-frame-pointer/)
