@@ -18,14 +18,13 @@ date: 2023-03-15 09:30:20 +0800
 
 Fedora 项目很高兴地宣布 Fedora Linux 38 Beta 现已发布，这是我们计划在 4 月底发布的 Fedora Linux 38 的下一步。
 
-请从我们的 Get Fedora 站点下载这个预发行版：
+请从我们的 Get Fedora 站点[^2]下载这个预发行版：
 
 - [获取 Fedora 38 Workstation Beta](https://getfedora.org/workstation/download/)
 - [获取 Fedora 38 Server Beta](https://getfedora.org/server/download/)
 - [获取 Fedora 38 IoT Beta](https://getfedora.org/iot/download/)
 - [获取 Fedora 38 Cloud Beta](https://alt.fedoraproject.org/en/cloud/)
 - [获取 Fedora 38 CoreOS Beta](https://getfedora.org/en/coreos/download)
-- [中国大陆镜像站列表](https://whiteboard-ui8.pages.dev/guide/misc/mirror-site/)
 
 或者，查看我们流行的变体分支，其中包括 KDE Plasma、Xfce 和其他桌面环境，以及用于 ARM 设备（如 Raspberry Pi）的镜像：
 
@@ -62,3 +61,5 @@ Beta 版本是代码完整的，与最终版本非常相似。如果你花时间
 有关 Fedora Linux 38 Beta 版新功能的更多详细信息，你可以查阅 [Fedora Linux 38 ChangeSet](https://fedoraproject.org/wiki/Releases/38/ChangeSet)。它包含有关此版本随附的新软件包和改进的更多技术信息。
 
 [^1]: 另见：[Fedora 38 的帧指针](https://imbearchild.cyou/archives/2023/02/fedora-38-frame-pointer/)
+
+[^2]: 另见：[中国大陆镜像站列表](https://whiteboard-ui8.pages.dev/guide/misc/mirror-site/)
