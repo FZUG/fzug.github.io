@@ -52,13 +52,13 @@ Fedora Linux 38 引入了几个新的 Spin——展示不同桌面环境的变�
 
 ## 桌面改进
 
-Fedora Workstation 专注于桌面体验。与往常一样，Fedora Workstation 采用了 GNOME 最新的版本。[GNOME 44] 包含许多重大改进，包括新的锁定屏幕、快捷菜单上的“后台应用程序”部分，以及对辅助功能设置的改进。此外，启用第三方存储库后，你可以在 Flathub 上以未经过滤的方式查看应用程序。
+Fedora Workstation 专注于桌面体验。与往常一样，Fedora Workstation 采用了 GNOME 最新的版本。[GNOME 44] 包含许多重大改进，包括新的锁定屏幕、快捷菜单上的“后台应用程序”部分，以及对辅助功能设置的改进。此外，启用第三方软件仓库后，你可以在 Flathub 上以未经过滤的方式查看应用程序。
 
 [GNOME 44]: https://release.gnome.org/44/
 
 在此版本中，我们缩短了服务关闭时的默认超时时间。这有助于你的系统更快地关闭电源——这在你需要拿起笔记本电脑离开时非常重要。
 
-当然，我们生产的不仅仅是 Edition。[Fedora Spins][spin] 和 [Labs][lab] 面向各种受众和用例，包括为计算神经科学提供工具的 [Fedora Comp Neuro]，以及提供轻量级桌面环境的 [Fedora LXQt] 等桌面环境。而且，不要忘记我们的备用架构：[ARM AArch64、Power 和 S390x][alt]。
+当然，我们生产的不仅仅是 Edition。[Fedora Spins][spin] 和 [Labs][lab] 面向各种受众和用例，包括为计算神经科学提供工具的 [Fedora Comp Neuro]，以及提供轻量级桌面环境的 [Fedora LXQt] 等桌面环境。而且，不要忘记我们的替代架构：[ARM AArch64、Power 和 S390x][alt]。
 
 [Fedora Comp Neuro]: https://labs.fedoraproject.org/en/comp-neuro/
 [Fedora LXQt]: https://spins.fedoraproject.org/en/lxqt/
@@ -88,17 +88,18 @@ Microdnf——默认包管理器的轻量级版本——被 dnf5 取代。[dnf5]
 
 [rule]: https://docs.fedoraproject.org/en-US/project/
 
-我们很高兴你能试用新版本！请转到 <https://fedoraproject.org/> 并立即下载。如果你已经在运行 Fedora Linux，请按照[简单的升级说明][upgrading]进行操作。有关 Fedora Linux 38 中新功能的更多信息，请参阅[发行说明]。
+我们很高兴你能体验新版本！请转到 <https://fedoraproject.org/> 并立即下载。如果你已经在运行 Fedora Linux，请按照[简单的升级说明][upgrading]进行操作。有关 Fedora Linux 38 中新功能的更多信息，请参阅[发行注记]。
 
 [upgrading]: https://docs.fedoraproject.org/en-US/quick-docs/upgrading/
-[发行说明]: https://docs.fedoraproject.org/en-US/fedora/f38/release-notes/
+[发行注记]: https://docs.fedoraproject.org/en-US/fedora/f38/release-notes/
 
 ## 万一出现问题……
 
-如果你遇到了问题，请访问我们的 [Ask Fedora] 用户支持论坛。这里有一个包括[常见问题]的类别。
+如果你遇到了问题，请访问我们的 [Ask Fedora] 用户支持论坛。这里有一个包括[常见问题]的类别（中文语言类别另见[此处]）。
 
 [Ask Fedora]: https://ask.fedoraproject.org/
 [常见问题]: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f38/l/latest
+[此处]: https://discussion.fedoraproject.org/tags/c/ask/non-english/85/chinese-simplified
 
 ## 感谢所有人
 
