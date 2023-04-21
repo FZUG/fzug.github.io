@@ -30,26 +30,20 @@ Fedora Workstation 38 装载了最新版本的 GNOME 桌面环境。GNOME 44 在
 
 大多数 GNOME 应用程序都是基于 GTK 4.10 构建的。这引入了一个改进的带有图标视图和图像预览的文件选择器。
 
-<center>
-![01](/assets/2023/04/fedora/File-chooser.png){ width=70% }  
-*GTK 4.10 中的新功能：带有图像预览的图标视图*
-</center>
+> ![01](/assets/2023/04/fedora/File-chooser.png)  
+> *GTK 4.10 中的新功能：带有图像预览的图标视图*
 
 ### 快速设置调整
 
 GNOME 44 对于“快速设置”菜单进行了多项改进。新版本包括一个引入了快速连接和断开已知蓝牙设备的新功能的蓝牙菜单。每个快速设置按钮都提供了额外的信息。
 
-<center>
-![02](/assets/2023/04/fedora/quick-settings_crpd.jpg){ width=50% }  
-*蓝牙菜单现在可用于连接已知设备*
-</center>
+> ![02](/assets/2023/04/fedora/quick-settings_crpd.jpg)  
+> *蓝牙菜单现在可用于连接已知设备*
 
 同样在快速设置菜单中，一个新的后台应用程序功能列出了在没有可见窗口的情况下运行的 Flatpak 应用程序。
 
-<center>
-![03](/assets/2023/04/fedora/f38-background-apps_crpd-720x1024.jpg){ width=50% }  
-*后台应用程序让你看到在没有可见窗口的情况下运行的沙盒应用程序并关闭它们*
-</center>
+> ![03](/assets/2023/04/fedora/f38-background-apps_crpd-720x1024.jpg)  
+> *后台应用程序让你看到在没有可见窗口的情况下运行的沙盒应用程序并关闭它们*
 
 ### 核心应用
 
@@ -64,19 +58,15 @@ GNOME 的核心应用程序在新版本中得到了重大改进。
 - 重新设计的“声音”现在包括用于音量混合器和警报声音的新窗口。
 - 您现在可以通过二维码将您的 Wi-Fi 密码共享到另一台设备。
 
-<center>
-![04](/assets/2023/04/fedora/settings.png){ width=70% }  
-*设置中改进的鼠标和触摸板面板*
-</center>
+> ![04](/assets/2023/04/fedora/settings.png)  
+> *设置中改进的鼠标和触摸板面板*
 
 在[文件]中，现在有一个选项可以在列表视图中展开文件夹。
 
 [文件]: https://apps.gnome.org/zh-CN/app/org.gnome.Nautilus/
 
-<center>
-![04](/assets/2023/04/fedora/files.png){ width=70% }  
-*可以在文件的设置中打开树视图*
-</center>
+> ![04](/assets/2023/04/fedora/files.png)  
+> *可以在文件的设置中打开树视图*
 
 [GNOME 软件]现在会自动检查未使用的 Flatpak 运行时并将其删除，从而节省磁盘空间。你还可以选择搜索结果中仅允许出现开源应用程序。
 
@@ -91,10 +81,8 @@ Fedora 的第三方软件仓库功能可以轻松启用一系列额外的软件�
 
 你仍然必须手动启用第三方软件仓库，并且可以从 GNOME 软件设置中禁用各个软件仓库。如果你不想让专有应用程序出现在你的搜索结果中，你也可以在 GNOME 软件的首选项菜单中启用以下选项：
 
-<center>
-![04](/assets/2023/04/fedora/software-config.png){ width=70% }  
-*一切尽在掌握*
-</center>
+> ![04](/assets/2023/04/fedora/software-config.png)  
+> *一切尽在掌握*
 
 ## Fedora Linux 38 的底层变化
 

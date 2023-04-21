@@ -81,8 +81,7 @@ Microdnf——默认包管理器的轻量级版本——被 dnf5 取代。[dnf5]
 
 如果您正在分析应用程序，您会喜欢现在内置在官方包中的帧指针（framer pointer）[^pointer]。这使得 Fedora Linux 成为寻求提高 Linux 应用程序性能的开发人员的绝佳平台。
 
-[^pointer]: 另见：Fedora Wiki 上的[原始提案](https://fedoraproject.org/wiki/Changes/fno-omit-frame-pointer)和 imbearchild 的《[Fedora 38 的帧指针
-](https://imbearchild.cyou/archives/2023/02/fedora-38-frame-pointer/)》
+[^pointer]: 另见：Fedora Wiki 上的[原始提案](https://fedoraproject.org/wiki/Changes/fno-omit-frame-pointer)和 imbearchild 的《[Fedora 38 的帧指针](https://imbearchild.cyou/archives/2023/02/fedora-38-frame-pointer/)》
 
 基于我们“第一”的[原则][rule]，我们更新了关键的编程语言和系统库包，包括 gcc 13、Golang 1.20、LLVM 16、Ruby 3.2、TeXLive2022 和 PHP 8.2 等等。
 
