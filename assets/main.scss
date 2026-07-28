@@ -275,3 +275,10 @@ $fedora-error: #c62828;
     }
   }
 }
+
+.dl-source-note {
+  text-align: center;
+  font-size: .75rem;
+  color: lighten($grey-color, 20%);
+  margin-top: 1.5rem;
+}

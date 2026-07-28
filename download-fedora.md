@@ -13,6 +13,8 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
   </noscript>
 </div>
 
+<p id="dl-source" class="dl-source-note"></p>
+
 <script>
 (() => {
   const MIRRORS = [
@@ -87,10 +89,15 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
     el.innerHTML = variants.map(v => buildItem(v.variant, v.iso)).join('');
   }
 
+  let dataSource = '';
+
   fetch('https://fedora.gitlab.io/websites-apps/fedora-websites/fedora-websites-3.0/releases.json',
         { signal: AbortSignal.timeout(8000) })
-    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .catch(() => fetch('{{ '/assets/fedora-release.json' | relative_url }}').then(r => r.json()))
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); dataSource = 'Fedora 官方'; return r.json(); })
+    .catch(() => {
+      dataSource = '网站缓存';
+      return fetch('{{ '/assets/fedora-release.json' | relative_url }}').then(r => r.json());
+    })
     .then(data => {
       const latest = data.reduce((max, i) => Math.max(max, parseInt(i.version) || 0), 0).toString();
 
@@ -110,6 +117,7 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
       if (kde) variants.push({ variant: 'KDE Plasma Desktop', iso: kde });
 
       render(variants);
+      document.getElementById('dl-source').textContent = `版本数据来源：${dataSource}`;
     })
     .catch(e => render([], 'GitLab 与本地数据均无法获取：' + e.message));
 })();
