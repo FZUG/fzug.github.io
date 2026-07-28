@@ -1,3 +1,8 @@
+---
+layout: page
+title: 版权声明
+permalink: /copyright/
+---
 # 版权声明
 
 本网站所有文章，除非明确声明版权，均默认使用[「署名 - 相同方式共享 4.0 国际 (CC BY-SA 4.0)」协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)进行授权。各位读者、创作者将享有以下权利（引用自上文链接，稍加修改）：

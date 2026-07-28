@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <section class="hero">
+    <h1 class="hero-title">{{ site.title | escape }}</h1>
+    <p class="hero-tagline">{{ site.tagline | escape }}</p>
+    <p class="hero-meta">已有 {{ site.posts.size }} 篇文章 · 社区始于 2008 年</p>
+  </section>
+
+  <section class="quick-links">
+    <div class="card-grid">
+      {%- for link in page.quick_links -%}
+        {%- if link.url contains "://" -%}
+          {%- assign href = link.url -%}
+          {%- assign is_external = true -%}
+        {%- else -%}
+          {%- assign href = link.url | relative_url -%}
+          {%- assign is_external = false -%}
+        {%- endif -%}
+        <a class="card{% if link.highlight %} card--highlight{% endif %}"
+           href="{{ href }}"
+           {%- if is_external %} target="_blank" rel="noopener"{% endif %}>
+          {%- if link.icon -%}
+          <span class="card-icon">{{ link.icon }}</span>
+          {%- endif -%}
+          <h3 class="card-title">{{ link.title }}</h3>
+          <p class="card-desc">{{ link.description }}</p>
+        </a>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  {%- if site.posts.size > 0 -%}
+  <section class="posts-section">
+    <div class="posts-header">
+      <h2 class="posts-heading">最新文章</h2>
+      <a class="rss-link" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </div>
+    <div class="card-grid">
+      {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
+      {%- for post in site.posts limit:4 -%}
+      <a class="card" href="{{ post.url | relative_url }}">
+        <span class="card-meta">{{ post.date | date: date_format }}</span>
+        <h3 class="card-title">{{ post.title | escape }}</h3>
+        {%- if site.show_excerpts -%}
+        <p class="card-desc">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+        {%- endif -%}
+      </a>
+      {%- endfor -%}
+    </div>
+    <p class="posts-more">
+      <a href="{{ '/feed.xml' | relative_url }}">查看全部 {{ site.posts.size }} 篇文章 →</a>
+    </p>
+  </section>
+  {%- endif -%}
+
+</div>

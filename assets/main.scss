@@ -7,6 +7,7 @@
 $fedorablue: #3c6eb4;
 $fedoradarkblue: #294172;
 $fedoralightgrey: #dedede;
+$fedora-error: #c62828;
 
 .site-header {
   background: linear-gradient(to bottom, $fedorablue 0%, $fedoradarkblue 100%);
@@ -19,3 +20,249 @@ $fedoralightgrey: #dedede;
 }
 
 .site-footer { background: $fedoralightgrey; }
+
+// ============================================================
+// Homepage Hero
+// ============================================================
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  color: $fedoradarkblue;
+}
+
+.hero-tagline {
+  font-size: 1.125rem;
+  color: $grey-color;
+  margin-bottom: .5rem;
+}
+
+.hero-meta {
+  font-size: .875rem;
+  color: lighten($grey-color, 20%);
+}
+
+// ============================================================
+// Quick-link card grid
+// ============================================================
+.quick-links {
+  padding: 0 1rem 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid $grey-color-light;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .2s ease, transform .2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  &--highlight {
+    background: linear-gradient(135deg, $fedorablue 0%, $fedoradarkblue 100%);
+    border-color: transparent;
+
+    .card-title,
+    .card-desc {
+      color: #fff;
+    }
+  }
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: .25rem;
+  color: $fedoradarkblue;
+}
+
+.card-desc {
+  font-size: .875rem;
+  color: $grey-color;
+  margin: 0;
+}
+
+.card-meta {
+  display: block;
+  font-size: .8rem;
+  color: lighten($grey-color, 15%);
+  margin-bottom: .25rem;
+}
+
+// ============================================================
+// Posts section
+// ============================================================
+.posts-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+.posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.posts-heading {
+  margin-bottom: 0;
+}
+
+.rss-link {
+  font-size: .875rem;
+}
+
+.posts-more {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+// ============================================================
+// Download page
+// ============================================================
+.dl-loading {
+  text-align: center;
+  padding: 2rem;
+  color: $grey-color;
+}
+
+.dl-error {
+  text-align: center;
+  padding: 2rem;
+  color: darken($fedora-error, 10%);
+  background: lighten($fedora-error, 40%);
+  border-radius: 8px;
+}
+
+.dl-card {
+  border: 1px solid $grey-color-light;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.dl-card-header {
+  background: linear-gradient(135deg, $fedorablue 0%, $fedoradarkblue 100%);
+  padding: 1rem 1.25rem;
+  color: #fff;
+}
+
+.dl-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: .125rem;
+  color: #fff;
+}
+
+.dl-card-version {
+  font-size: .875rem;
+  opacity: .85;
+}
+
+.dl-card-body {
+  padding: 1.25rem;
+}
+
+.dl-card-file {
+  font-weight: 600;
+  word-break: break-all;
+  margin-bottom: .25rem;
+}
+
+.dl-card-size {
+  font-size: .85rem;
+  color: $grey-color;
+  margin-bottom: 1rem;
+}
+
+.dl-sha {
+  font-size: .75rem;
+  word-break: break-all;
+  background: lighten($grey-color-light, 5%);
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: $grey-color-dark;
+}
+
+.dl-group {
+  margin-bottom: 1rem;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.dl-group-title {
+  font-size: .85rem;
+  color: $grey-color;
+  margin-bottom: .35rem;
+  font-weight: 600;
+}
+
+.dl-btn {
+  display: block;
+  padding: .5rem .75rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: .875rem;
+  transition: background .15s;
+
+  & + & { margin-top: .35rem; }
+
+  &-official {
+    background: lighten($grey-color-light, 8%);
+    color: $text-color;
+    word-break: break-all;
+
+    &:hover {
+      background: $grey-color-light;
+      text-decoration: none;
+    }
+  }
+
+  &-mirror {
+    background: lighten($fedorablue, 47%);
+    color: $fedoradarkblue;
+
+    &:hover {
+      background: lighten($fedorablue, 40%);
+      text-decoration: none;
+    }
+  }
+
+  &-small {
+    display: inline-block;
+    background: lighten($grey-color-light, 8%);
+    color: $text-color;
+    margin-right: .5rem;
+
+    &:hover {
+      background: $grey-color-light;
+      text-decoration: none;
+    }
+  }
+}
