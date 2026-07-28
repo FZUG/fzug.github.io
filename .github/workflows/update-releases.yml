@@ -1,0 +1,36 @@
+name: Update releases.json
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest releases.json
+        run: |
+          curl -sSfo /tmp/releases.json \
+            'https://fedora.gitlab.io/websites-apps/fedora-websites/fedora-websites-3.0/releases.json'
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if ! cmp -s /tmp/releases.json assets/fedora-release.json; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit update
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          cp /tmp/releases.json assets/fedora-release.json
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add assets/fedora-release.json
+          git commit -m "Update releases.json from fedora.gitlab.io"
+          git push
