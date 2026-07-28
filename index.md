@@ -5,7 +5,7 @@ quick_links:
     description: 了解 FZUG 社区，加入 Fedora 中文大家庭
     url: /about/
   - title: 下载 Fedora
-    description: Fedora 中文社区软件源与镜像加速
+    description: 从镜像源加速下载 Fedora
     url: /download-fedora/
   - title: 官方论坛
     description: 在 Fedora Discussion 中文频道提问交流

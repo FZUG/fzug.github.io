@@ -43,6 +43,8 @@ theme: minima
 plugins:
   - jekyll-feed
 show_excerpts: true
+header_pages:
+  - about.md
 exclude:
   - Gemfile
   - Gemfile.lock

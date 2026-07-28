@@ -68,7 +68,7 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
             <div class="dl-group">
               <h3 class="dl-group-title">校验</h3>
               <a class="dl-btn dl-btn-small" href="${iso.link.replace('.iso', '-CHECKSUM')}">CHECKSUM</a>
-              <a class="dl-btn dl-btn-small" href="https://fedoraproject.org/verify">如何验证</a>
+              <a class="dl-btn dl-btn-small" href="/verify/">如何验证</a>
             </div>
           </div>
         </div>
