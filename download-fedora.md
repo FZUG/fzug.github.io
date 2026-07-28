@@ -18,8 +18,7 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
   const MIRRORS = [
     { name: 'TUNA (清华)', url: 'https://mirrors.tuna.tsinghua.edu.cn/fedora/releases/' },
     { name: 'USTC (中科大)', url: 'https://mirrors.ustc.edu.cn/fedora/releases/' },
-    { name: 'SJTUG (上交)', url: 'https://mirror.sjtu.edu.cn/fedora/releases/' },
-    { name: 'BJTU (北交)', url: 'https://mirror.bjtu.edu.cn/fedora/releases/' }
+    { name: 'SJTUG (上交)', url: 'https://mirror.sjtu.edu.cn/fedora/linux/releases/' }
   ];
 
   const OFFICIAL = 'https://download.fedoraproject.org/pub/fedora/linux/releases/';
