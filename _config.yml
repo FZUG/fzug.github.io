@@ -42,7 +42,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-show_excerpts: true
+show_excerpts: false
 header_pages:
   - about.md
 exclude:
