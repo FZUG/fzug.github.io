@@ -14,7 +14,16 @@ $fedora-error: #c62828;
   border: 0px;
 }
 
-.site-title, .site-title:visited { color: white; }
+.site-logo {
+  float: left;
+  line-height: 0;
+  padding: 8px 0;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+}
 @media screen and (min-width: 600px) {
   .site-nav .page-link { color: white; }
 }
