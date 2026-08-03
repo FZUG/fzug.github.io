@@ -8,6 +8,7 @@ $fedorablue: #3c6eb4;
 $fedoradarkblue: #294172;
 $fedoralightgrey: #dedede;
 $fedora-error: #c62828;
+$fedora-warning: #f0c000;
 
 .site-header {
   background: linear-gradient(to bottom, $fedorablue 0%, $fedoradarkblue 100%);
@@ -281,4 +282,81 @@ $fedora-error: #c62828;
   font-size: .75rem;
   color: lighten($grey-color, 20%);
   margin-top: 1.5rem;
+}
+
+.dl-control {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1rem;
+
+  &:last-of-type { margin-bottom: .5rem; }
+}
+
+.dl-label {
+  flex: 0 0 auto;
+  width: 3.5rem;
+  font-weight: 600;
+  color: $grey-color-dark;
+}
+
+.dl-toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.dl-toggle {
+  padding: .35rem .8rem;
+  border: 1px solid $grey-color-light;
+  border-radius: 4px;
+  background: #fff;
+  color: $text-color;
+  font-size: .875rem;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+
+  &:hover {
+    border-color: $fedorablue;
+    text-decoration: none;
+  }
+
+  &.is-active {
+    background: $fedorablue;
+    border-color: $fedorablue;
+    color: #fff;
+  }
+}
+
+.dl-advanced {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .85rem;
+  color: $grey-color;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.dl-arch-warning {
+  padding: .75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+  font-size: .875rem;
+  color: darken($fedora-warning, 45%);
+  background: lighten($fedora-warning, 35%);
+
+  a { color: inherit; text-decoration: underline; }
+}
+
+.dl-hint {
+  text-align: center;
+  padding: 2rem;
+  color: $grey-color;
+  border: 1px dashed $grey-color-light;
+  border-radius: 8px;
+}
+
+.dl-note {
+  font-size: .85rem;
+  color: $grey-color;
 }
