@@ -345,6 +345,8 @@ $fedora-warning: #f0c000;
   color: darken($fedora-warning, 45%);
   background: lighten($fedora-warning, 35%);
 
+  ul { margin: 0; padding-left: 1.25rem; }
+  li + li { margin-top: .25rem; }
   a { color: inherit; text-decoration: underline; }
 }
 

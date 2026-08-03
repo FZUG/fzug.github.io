@@ -224,17 +224,18 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
     const el = document.getElementById('download-cards');
     const warning = document.getElementById('dl-warning');
 
-    let warn = '';
+    const warns = [];
     if (state.arch === 'aarch64') {
-      warn = '此处提供的 ARM 架构 ISO 镜像仅适用于特定规范下的 UEFI 系统。raw.xz 镜像适用于树莓派，' +
-        '请参阅<a href="https://docs.fedoraproject.org/zh_CN/quick-docs/raspberry-pi/">树莓派相关文档</a>。';
+      warns.push('此处提供的 ARM 架构 ISO 镜像仅适用于特定规范下的 UEFI 系统');
+      warns.push('raw.xz 镜像适用于树莓派，请参阅<a href="https://docs.fedoraproject.org/zh_CN/quick-docs/raspberry-pi/">树莓派相关文档</a>');
+      warns.push('Apple Silicon (M 系列) Mac 请使用 <a href="https://fedora-asahi-remix.org/">Fedora Asahi Remix</a>，' +
+        '由 <a href="https://asahilinux.org/">Asahi Linux 项目</a> 与 <a href="https://fedoraproject.org/wiki/SIGs/Asahi">Fedora Asahi SIG</a> 合作维护');
     }
     if (state.advanced) {
-      warn = (warn ? warn + ' ' : '') +
-        '高级选项会显示所有可能的架构与发行版组合，其中一些组合不一定适用于您的设备或者用途，请在下载前详细了解。';
+      warns.push('高级选项会显示所有可能的架构与发行版组合，其中一些组合不一定适用于您的设备或者用途，请在下载前详细了解');
     }
-    warning.hidden = !warn;
-    warning.innerHTML = warn;
+    warning.hidden = warns.length === 0;
+    warning.innerHTML = warns.length ? '<ul><li>' + warns.join('</li><li>') + '</li></ul>' : '';
 
     if (!state.edition) {
       el.innerHTML = '<div class="dl-hint">请先选择架构与版本，以获取下载链接。</div>';
