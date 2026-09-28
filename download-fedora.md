@@ -4,7 +4,7 @@ title: 下载 Fedora
 permalink: /download-fedora/
 ---
 
-Fedora 每六个月发布一个新版本，带来最新的自由开源软件。请先选择架构与版本，然后获取对应的 Live ISO 镜像下载链接。
+Fedora 每六个月发布一个新版本，带来最新的自由开源软件。请先选择架构、版本号与变体，然后获取对应的 Live ISO 镜像下载链接。
 
 <div id="download-controls">
   <div class="dl-control">
@@ -12,11 +12,15 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
     <div id="dl-arch" class="dl-toggle-group"></div>
   </div>
   <div class="dl-control">
-    <span class="dl-label">版本</span>
+    <span class="dl-label">版本号</span>
+    <div id="dl-version" class="dl-toggle-group"></div>
+  </div>
+  <div class="dl-control">
+    <span class="dl-label">变体</span>
     <div id="dl-edition" class="dl-toggle-group"></div>
   </div>
   <label class="dl-advanced">
-    <input type="checkbox" id="dl-advanced"> 显示高级选项（所有架构与版本组合）
+    <input type="checkbox" id="dl-advanced"> 显示高级选项（所有架构、版本号与变体组合）
   </label>
 </div>
 
@@ -84,9 +88,8 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
     'Everything', 'IoT', 'IoT_Simplified_Provisioner'
   ];
 
-  const state = { arch: 'x86_64', edition: null, advanced: false };
+  const state = { arch: 'x86_64', version: null, edition: null, advanced: false };
   let data = [];
-  let latest = '';
   let dataSource = '';
 
   function loadState() {
@@ -94,6 +97,7 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
       const saved = JSON.parse(sessionStorage.getItem('dl-state') || 'null');
       if (saved && saved.arch) {
         state.arch = saved.arch;
+        state.version = saved.version || null;
         state.edition = saved.edition || null;
         state.advanced = !!saved.advanced;
         const cb = document.getElementById('dl-advanced');
@@ -106,10 +110,36 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
     try {
       sessionStorage.setItem('dl-state', JSON.stringify({
         arch: state.arch,
+        version: state.version,
         edition: state.edition,
         advanced: state.advanced
       }));
     } catch (e) { /* ignore */ }
+  }
+
+  // version 字段形如 "44" 或 "45 Beta"，用 parseInt 比较会把 "45 Beta" 误判成 45，
+  // 因此统一先解析成 { version, num, stable } 再按 num 排序、按字符串精确匹配。
+  function versionEntries() {
+    const map = new Map();
+    data.forEach(i => {
+      const v = i.version == null ? '' : String(i.version).trim();
+      if (!v || map.has(v)) return;
+      map.set(v, { version: v, num: parseInt(v) || 0, stable: /^\d+$/.test(v) });
+    });
+    return [...map.values()].sort((a, b) =>
+      b.num - a.num || (a.stable === b.stable ? 0 : a.stable ? -1 : 1));
+  }
+
+  function visibleVersions() {
+    const all = versionEntries();
+    if (state.advanced) return all;
+    const stable = all.filter(v => v.stable);
+    // 数据里万一只有预发布版本，也至少给出可选项
+    return (stable.length ? stable : all).slice(0, 2);
+  }
+
+  function isBeta(v) {
+    return !/^\d+$/.test(String(v == null ? '' : v).trim());
   }
 
   function formatSize(bytes) {
@@ -135,8 +165,11 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
       const date = (filename.match(/\d{8}\.\d+/) || [])[0] || '';
       return dir + `Fedora-IoT-${iso.version}-${iso.arch}-${date}-CHECKSUM`;
     }
-    const compose = (filename.match(/(\d+-\d+\.\d+)/) || [])[1] || iso.version;
-    return dir + `Fedora-${iso.variant}-${compose}-${iso.arch}-CHECKSUM`;
+    // 正式版: Fedora-Workstation-44-1.7-x86_64-CHECKSUM
+    // 预发布: Fedora-Workstation-iso-45_Beta-1.3-x86_64-CHECKSUM（多一段 iso-）
+    const compose = (filename.match(/(\d+(?:_\w+)?-\d+\.\d+)/) || [])[1] || iso.version;
+    const kind = isBeta(iso.version) ? 'iso-' : '';
+    return dir + `Fedora-${iso.variant}-${kind}${compose}-${iso.arch}-CHECKSUM`;
   }
 
   function isoScore(filename) {
@@ -154,7 +187,7 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
   function editionsFor(arch, advanced) {
     const byKey = {};
     data.forEach(i => {
-      if (i.version !== latest || i.arch !== arch || !i.link.endsWith('.iso')) return;
+      if (String(i.version).trim() !== state.version || i.arch !== arch || !i.link.endsWith('.iso')) return;
       const key = i.subvariant || i.variant;
       (byKey[key] = byKey[key] || []).push(i);
     });
@@ -231,14 +264,17 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
       warns.push('Apple Silicon (M 系列) Mac 请使用 <a href="https://fedora-asahi-remix.org/">Fedora Asahi Remix</a>，' +
         '由 <a href="https://asahilinux.org/">Asahi Linux 项目</a> 与 <a href="https://fedoraproject.org/wiki/SIGs/Asahi">Fedora Asahi SIG</a> 合作维护');
     }
+    if (isBeta(state.version)) {
+      warns.push('当前选择的是 Beta 预发布版本，仅用于测试，可能存在已知问题，请勿用于生产环境');
+    }
     if (state.advanced) {
-      warns.push('高级选项会显示所有可能的架构与发行版组合，其中一些组合不一定适用于您的设备或者用途，请在下载前详细了解');
+      warns.push('高级选项会显示所有可能的架构、版本号与变体组合，其中一些组合不一定适用于您的设备或者用途，请在下载前详细了解');
     }
     warning.hidden = warns.length === 0;
     warning.innerHTML = warns.length ? '<ul><li>' + warns.join('</li><li>') + '</li></ul>' : '';
 
-    if (!state.edition) {
-      el.innerHTML = '<div class="dl-hint">请先选择架构与版本，以获取下载链接。</div>';
+    if (!state.version || !state.edition) {
+      el.innerHTML = '<div class="dl-hint">请先选择架构、版本号与变体，以获取下载链接。</div>';
       return;
     }
     const editions = editionsFor(state.arch, state.advanced);
@@ -253,11 +289,17 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
 
   function renderControls() {
     const archEl = document.getElementById('dl-arch');
+    const versionEl = document.getElementById('dl-version');
     const editionEl = document.getElementById('dl-edition');
 
     const visibleArches = state.advanced ? ARCHES : ARCHES.slice(0, 2);
     archEl.innerHTML = visibleArches.map(a =>
       `<button type="button" class="dl-toggle${state.arch === a.id ? ' is-active' : ''}" data-arch="${a.id}">${a.label}</button>`
+    ).join('');
+
+    const versions = visibleVersions();
+    versionEl.innerHTML = versions.map(v =>
+      `<button type="button" class="dl-toggle${state.version === v.version ? ' is-active' : ''}${v.stable ? '' : ' is-prerelease'}" data-version="${v.version}">${v.version}</button>`
     ).join('');
 
     const editions = editionsFor(state.arch, state.advanced);
@@ -272,6 +314,12 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
     if (!validArches.some(a => a.id === state.arch)) {
       state.arch = 'x86_64';
       state.edition = null;
+    }
+    const versions = visibleVersions();
+    if (!versions.some(v => v.version === state.version)) {
+      // 所选版本号不在当前可见列表中（例如关闭高级模式后的 Beta），回退到最新的一个。
+      // 这里不清空 edition，交由下方校验：若该版本仍提供所选变体则保留用户选择。
+      state.version = versions.length ? versions[0].version : null;
     }
     if (state.edition && !editionsFor(state.arch, state.advanced).some(e => e.key === state.edition)) {
       state.edition = null;
@@ -289,6 +337,15 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
     sync();
   });
 
+  document.getElementById('dl-version').addEventListener('click', e => {
+    const btn = e.target.closest('[data-version]');
+    if (!btn) return;
+    state.version = btn.dataset.version;
+    // 不主动清空 edition：切换版本号后若所选变体仍存在则保留，
+    // 不存在时由 sync() 统一校验并回退。
+    sync();
+  });
+
   document.getElementById('dl-edition').addEventListener('click', e => {
     const btn = e.target.closest('[data-edition]');
     if (!btn) return;
@@ -298,24 +355,24 @@ Fedora 每六个月发布一个新版本，带来最新的自由开源软件。�
 
   document.getElementById('dl-advanced').addEventListener('change', e => {
     state.advanced = e.target.checked;
-    if (!state.advanced && state.arch === 'x86_64') {
-      state.edition = null;
-    }
     sync();
   });
 
   loadState();
 
+  // AbortSignal.timeout 需要较新的浏览器，缺失时退化为无超时，避免整个脚本中断
+  const timeoutSignal = (typeof AbortSignal === 'function' && typeof AbortSignal.timeout === 'function')
+    ? AbortSignal.timeout(8000) : undefined;
+
   fetch('https://fedora.gitlab.io/websites-apps/fedora-websites/fedora-websites-3.0/releases.json',
-        { signal: AbortSignal.timeout(8000) })
+        { signal: timeoutSignal })
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); dataSource = 'Fedora 官方'; return r.json(); })
     .catch(() => {
       dataSource = '网站缓存';
       return fetch('{{ '/assets/fedora-release.json' | relative_url }}').then(r => r.json());
     })
     .then(json => {
-      data = json;
-      latest = data.reduce((max, i) => Math.max(max, parseInt(i.version) || 0), 0).toString();
+      data = Array.isArray(json) ? json : [];
       sync();
       document.getElementById('dl-source').textContent = `版本数据来源：${dataSource}`;
     })

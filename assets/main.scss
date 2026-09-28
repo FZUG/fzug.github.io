@@ -294,7 +294,7 @@ $fedora-warning: #f0c000;
 
 .dl-label {
   flex: 0 0 auto;
-  width: 3.5rem;
+  width: 4rem; // 容纳「版本号」等 3 字标签
   font-weight: 600;
   color: $grey-color-dark;
 }
@@ -324,6 +324,17 @@ $fedora-warning: #f0c000;
     background: $fedorablue;
     border-color: $fedorablue;
     color: #fff;
+  }
+
+  // 预发布 Version（如 45 Beta）用虚线边框区分
+  &.is-prerelease {
+    border-style: dashed;
+    color: $fedorablue;
+
+    &.is-active {
+      border-style: solid;
+      color: #fff;
+    }
   }
 }
 
