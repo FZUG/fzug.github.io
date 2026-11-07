@@ -9,6 +9,7 @@ date: 2026-10-17 12:00:00 +0800
 
 - 本文描述：在安装系统时使用手动分区；
 - 本文只使用默认的 btrfs 文件系统；
+- 本文编写时使用了 Fedora 44，更新版本的 UI 可能有所不同；
 - 本文不描述：完整的安装流程及其他。
 
 ## 分区表
@@ -17,7 +18,7 @@ date: 2026-10-17 12:00:00 +0800
 
 [ESP]: https://wiki.archlinux.org/title/EFI_system_partition
 
-Fedora Linux 单系统的 ESP 分区大小设定为 100MiB 即可（Fedora 实际使用了大约 20MiB，见下文实例）。
+Fedora Linux 单系统的 ESP 分区大小设定为 100MiB 即可（Fedora 实际使用了大约 20MiB，见下文实例）。当涉及 Windows-Linux 双系统时，如果不确定安装顺序，则建议 ESP 大小为 256MiB 或更大。
 
 ```bash
 poplar@Greysia:~$ sudo du -h /boot/efi
@@ -30,13 +31,15 @@ poplar@Greysia:~$ sudo du -h /boot/efi
 21M     /boot/efi
 ```
 
-当涉及 Windows-Linux 双系统时，如果不确定安装顺序，则建议 ESP 大小为 256MiB 或更大。
+**注意：**<br />
+- 从 Fedora 45 开始，安装器会检查 ESP 分区是否大于 500MiB。建议安装 45 及更新版本的 Fedora 时，将 ESP 大小设置 510MiB 或更大值。有关于此，另见[此处]。
+- **不要让 Windows 和 Linux 共用同一个 ESP 分区。**
 
-**特别注意：不要让 Windows 和 Linux 共用同一个 ESP 分区。**
+[此处]: https://discussion.fedoraproject.org/t/is-it-safe-to-install-fedora-45-using-only-a-100mib-esp/207178
 
 根据文档[^ref1]，根分区大小建议为 15GiB 及更大。
 
-[^ref1]: https://docs.fedoraproject.org/en-US/fedora/latest/release-notes/hardware_overview/
+[^ref1]: <https://docs.fedoraproject.org/en-US/fedora/latest/release-notes/hardware_overview/>
 
 ## 使用存储编辑器设置
 
