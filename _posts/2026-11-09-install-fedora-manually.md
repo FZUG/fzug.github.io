@@ -22,9 +22,9 @@ date: 2026-11-09 12:00:00 +0800
 [ESP]: https://wiki.archlinux.org/title/EFI_system_partition
 [biosboot]: https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation
 
-对于 Fedora 45 及更新版本，安装器要求 ESP 应大于 500MiB。根据文档[^ref1]，根分区大小建议为 15GiB 及更大。
+对于 Fedora 45 及更新版本，安装器要求 ESP 应大于 500MiB。根据 Fedora 45 发行说明[^ref1]，根分区大小建议为 15GiB 及更大。
 
-[^ref1]: https://docs.fedoraproject.org/en-US/fedora/latest/release-notes/hardware_overview/
+[^ref1]: <https://docs.fedoraproject.org/en-US/release-notes/f45/#_hardware_overview>
 
 当涉及 Windows-Linux 双系统时，如果不确定安装顺序，则建议先安装 Linux。如果颠倒顺序，需要参考 [ArchLinux Wiki 文档][dual-boot]重新配置 grub 以实现 dual-boot。
 
@@ -103,3 +103,4 @@ date: 2026-11-09 12:00:00 +0800
 [RHEL 文档]: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/managing_storage_devices/getting-started-with-swap_managing-storage-devices#recommended-system-swap-space_getting-started-with-swap
 
 如上，其他内容请参考万能的 archlinux wiki 和各处零散的 fedora 文档。
+
